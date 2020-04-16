@@ -1,7 +1,7 @@
 const express = require('express')
 const path = require('path')
 
-
+var PORT=process.env.PORT|| 5000;
 const app = express();
 
 app.use(express.json())
@@ -11,4 +11,4 @@ app.use('/todos', require('./todos'))
 app.use('/todos/sort/',require('./todos'))
 
 app.use('/todos/note/',require('./todos'))
-app.listen(2678, () => console.log('Server started at http://localhost:2678'))
+app.listen(PORT, () => console.log('Server started at http://localhost:2678'))
