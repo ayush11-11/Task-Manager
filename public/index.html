@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/js/all.js"></script>
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha256-siyOpF/pBWUPgIcQi17TLBkjvNgNQArcmwJB8YvkAgg=" crossorigin="anonymous" />
+  <script src="date.js"></script>
+  <script src="info.js"></script>
+  <script src="index.js"></script>
+  <script  src="task.js"></script>
+  
+   
+</head>
+<body>
+
+  <div class="container">
+    <h1 align="center">Task Manager</h1>
+
+    <div class="row">
+      <!-- Input box -->
+      <div class="col-md-7">
+        <form>
+      <!--Title-->
+          <div class="form-group row">
+            <label for="inpTitle" class="col-sm-2 col-form-label">Title</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inpTitle" placeholder="Title" required="true">
+            </div>
+          </div>
+    <!--Description-->
+          <div class="form-group row">
+            <label for="inpDescription" class="col-sm-2 col-form-label">Description</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inpDescription" placeholder="Description">
+            </div>
+          </div>
+      <!--Due Date-->
+          <div class="form-group row">
+            <label for="dueDate" class="col-sm-2 col-form-label">Due Date</label>
+             <div class='input-group date col-sm-10' id='datepicker'>
+                      <input type='text' class="form-control" placeholder="Due Date" required="true" id="dueDate">
+                      <span class="input-group-append add-on">
+                        <i class="fas fa-calendar-week" style="font-size:38px; " ></i>
+                      </span>
+                  </div>
+          </div>
+  <!-- Priority-------------------------------------------->
+          <fieldset class="form-group">
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Priority</legend>
+              <div class="col-sm-10">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadios"  value="low" >
+                  <label class="form-check-label" for="gridRadios1">
+                    Low
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadios" value="medium" checked>
+                  <label class="form-check-label" for="gridRadios2">
+                    Medium
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadios" value="high">
+                  <label class="form-check-label" for="gridRadios3">
+                    High
+                  </label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+     <!--    Submit--------------------------------->      
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <button type="submit" class="btn btn-primary" id="addTask">Add Task</button>
+            </div>
+          </div>
+        </form>
+         
+    
+      </div>
+    </div>
+
+    <!-- Task List ------------------------------------------------------------------------>
+    <div class="card">
+      <div class="class-body">
+        <div class="row">
+          <div class="col-8">
+          <h4 class=" card-title mx-auto">Added tasks</h4>
+          </div>
+          <div class="dropdown col-4">
+            <button class="btn btn-secondary dropdown-toggle float-right" id="sort" type="button" data-toggle="dropdown">Sort By
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li class="dropdown-item" id ="sortDate">Due Date</li>
+              <li class="dropdown-item" id="sortPrio">Priority</li>
+              <li class="dropdown-item" id="sortStatus">Status</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    <!------------------added Tasks-->
+    <div class="card-content">
+      <ul class="list-group taskList" id="taskList">
+        <li class="list-group-item">First item</li>
+        <li class="list-group-item">Second item</li>
+        <li class="list-group-item">Third item</li>
+      </ul>
+    </div>
+    </div>
+  </div>
+
+</body>
+ 
+</html>
